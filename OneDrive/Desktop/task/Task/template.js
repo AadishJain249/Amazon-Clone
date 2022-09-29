@@ -1,5 +1,7 @@
-const email=require('../Task/src/routers/user')
-const demo=`<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+// const email =require('../Task/src/routers/user')
+const demo=(email)=>{
+return `<!DOCTYPE html>
+<html>
       <head>
       <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -69,10 +71,7 @@ const demo=`<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:sc
       
       </head>
       <body style="background-color: #e9ecef;">
-      
-        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-      
-        
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
           <tr>
             <td align="center" bgcolor="#e9ecef">
             </td>
@@ -81,37 +80,32 @@ const demo=`<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:sc
             <td align="center" bgcolor="#e9ecef">
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                 <tr>
-                  <td align="left" bgcolor="#ffffff" style="padding: 36px 24px 0; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; border-top: 3px solid #d4dadf;">
-                      <div style="display: flex; ">
-                          
-                          &nbsp;&nbsp;
-                          <h1 style="margin: 0; font-size: 32px; font-weight: 700;letter-spacing: -1px; line-height: 48px;"><img style="margin-right:5px;" src="https://cdn.mos.cms.futurecdn.net/SDDw7CnuoUGax6x9mTo7dd.jpg" alt="" width="50" style="height:8;" />Slack</h1>    
+                  <td align="left" bgcolor="#ffffff" font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; border-top: 3px solid #d4dadf;">
+                 <div style="display: flex;padding-top:40px;">
+                        &nbsp;&nbsp;
+                        <img src="https://cdn.mos.cms.futurecdn.net/SDDw7CnuoUGax6x9mTo7dd.jpg" alt="" width="80" style="height:8;" />
+                        <h1 style="margin: 0; font-size: 32px; font-weight: 700;letter-spacing: -1px; line-height: 48px;">Slack</h1>    
                       </div>
                       <br>
                     <br>
       
-                    <h1 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -1px; line-height: 48px;">Confirm Your Email Address to get started on Slack</h1>
+                    <h1 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -1px; line-height: 48px;padding-left:30px">Confirm Your Email Address to get started on Slack</h1>
                   </td>
                 </tr>
               </table>
              
             </td>
           </tr>
-      
           <tr>
             <td align="center" bgcolor="#e9ecef">
-              
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-      
-              
-                <tr>
+              <tr>
                   <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
-                    <p style="margin: 0;text-decoration: none; ">Once you have confirm that ${email.emailnew} is your email address,We'll help you find your Slack Workspace or create a new one</p> 
+                    <p style="margin: 0;text-decoration: none; padding-left:5px;">Once you have confirm that ${email} is your email address,We'll help you find your Slack Workspace or create a new one</p> 
        <p><b>📱From Your Mobile Device</b>, tap the button below to confirm</p>
                   </td>
                 </tr>
-              
-                <tr>
+              <tr>
                   <td align="left" bgcolor="#ffffff">
                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
@@ -121,7 +115,7 @@ const demo=`<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:sc
                               <td align="center" bgcolor=""style="border-radius: 6px;">
                                   
                                 <button style="padding: 16px 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px;color:#ffffff; text-decoration: none; border-radius: 6px;background-color:green;font-weight:bold;
-                                margin-right:290px;
+                                margin-right:300px;
                                 ">Confirm Email Address</button>
                               </td>
                             </tr>
@@ -131,17 +125,15 @@ const demo=`<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:sc
                     </table>
                   </td>
                 </tr>
-               
-                <div align="center">
+               <div align="center">
                 <tr>
                   <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
-                    <p style="margin: 0; font-weight:200;">If you didn't request this email there is nothing to worry about-- you can safely ignore it <p style="margin: 0;"></p>
+                    <p style="margin: 0; font-weight:200;padding-left:10px">If you didn't request this email there is nothing to worry about-- you can safely ignore it <p style="margin: 0;"></p>
                     <hr style="width:100%">
                     <p align ="center" style="margin: 0; font-weight:400;">Made by Slack Technologies,Inc </p>
              <p align ="center" style="margin: 0;font-weight:400;">500 Howard Street | San Francisco ,CA 94105 | United States</p>
                     <br>
-                    
-            <div style="display:flex;margin: auto;width: 50%;">
+          <div style="display:flex;margin: auto;width: 50%;">
                     <p style="font-weight:200;"><a style="color:black;text-decoration: underline;" href="" 
          >Our Blog</a>
               &nbsp;&nbsp;&nbsp;&nbsp;
@@ -174,4 +166,5 @@ const demo=`<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:sc
       
       </body>
       </html>`
-    module.exports=demo
+    }
+      module.exports=demo
