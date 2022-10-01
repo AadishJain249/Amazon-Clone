@@ -20,10 +20,8 @@ The design is based on Amazon.
 # Contributing
 Amazon clone is MIT licensed and accepts contributions via GitHub pull requests
 
-<br>
 ## Getting Started
 - Fork the repository on GitHub.
-<br>
 
 # Contribution Flow
 
