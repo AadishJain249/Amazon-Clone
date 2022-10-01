@@ -1,3 +1,37 @@
+# Amazon Clone (e-commerce)
+<br>
+Amazon Clone is a project where you can create a product, add the products to the cart, do a payment<br>
+The design is based on Amazon.
+<br>
+# Features
+- Add functional rating products.
+- Email Authentication using firebase
+- Product details page.
+<br>
+
+# How to install and run the project
+- do npm i for this project after installing all dependencies and do npm start 
+-.env is needed to run the application locally (.env in this project for firbase)
+
+
+# How to contribute
+-if you want to contribute please check the open issues https://github.com/AadishJain249/Amazon-Clone/issues
+
+# Contributing
+Amazon clone is MIT licensed and accepts contributions via GitHub pull requests
+<br>
+## Getting Started
+- Fork the repository on GitHub.
+<br>
+# Contribution Flow
+
+- Make commits of ur changes.
+- Make sure your commit messages are in the proper format
+  title: One line description about your change and screenshot of your work
+- Push your changes to a topic branch in your fork of the repository.
+- Submit a pull request to the original repository.
+
+# Demo of this project
 video project of this project
 <br><br>
 https://drive.google.com/file/d/1Q6bZe_ZY6G3PkCOp_gKKbGy2NTAteUOs/view?usp=sharing
