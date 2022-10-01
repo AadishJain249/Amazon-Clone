@@ -10,19 +10,21 @@ The design is based on Amazon.
 <br>
 
 # How to install and run the project
-- do npm i for this project after installing all dependencies and do npm start 
--.env is needed to run the application locally (.env in this project for firbase)
+- Do npm i for this project after installing all dependencies and do npm start 
+- .env is needed to run the application locally (.env in this project is for firebase)
 
 
 # How to contribute
--if you want to contribute please check the open issues https://github.com/AadishJain249/Amazon-Clone/issues
+- If you want to contribute please check the open issues https://github.com/AadishJain249/Amazon-Clone/issues
 
 # Contributing
 Amazon clone is MIT licensed and accepts contributions via GitHub pull requests
+
 <br>
 ## Getting Started
 - Fork the repository on GitHub.
 <br>
+
 # Contribution Flow
 
 - Make commits of ur changes.
