@@ -2,12 +2,13 @@
 <br>
 Amazon Clone is a project where you can create a product, add the products to the cart, do a payment<br>
 The design is based on Amazon.
-<br>
+
+
 # Features
 - Add functional rating products.
 - Email Authentication using firebase
 - Product details page.
-<br>
+
 
 # How to install and run the project
 - Do npm i for this project after installing all dependencies and do npm start 
