@@ -1,12 +1,15 @@
-import React from 'react'
-import CheckOutProduct from '../CheckoutProduct/CheckOutProduct'
-import { useStateValue } from '../StateProvider/StateProvider'
-import './Checkout.css'
-import SubTotal from '../../src/Subtotal/SubTotal'
+import React from "react";
+import CheckOutProduct from "../CheckoutProduct/CheckOutProduct";
+import { useStateValue } from "../StateProvider/StateProvider";
+import "./Checkout.css";
+import SubTotal from "../../src/Subtotal/SubTotal";
 function Checkout() {
-  const [{basket,user}]=useStateValue()
+  const theme = window.localStorage.getItem("theme-azclone")
+    ? window.localStorage.getItem("theme-azclone")
+    : "light";
+  const [{ basket, user }] = useStateValue();
   return (
-  <div className="checkout">
+    <div className={theme === "light" ? "checkout" : "checkout__dark checkout"}>
       <div className="checkout__left">
         <img
           className="checkout__ad"
@@ -14,11 +17,11 @@ function Checkout() {
           alt=""
         />
 
-        <div>
+        <div className={theme === "light" ? "" : "checkout__body__dark"}>
           <h3>{user?.email}</h3>
-         <h2 className="checkout__title">Your shopping Basket</h2>
+          <h2 className="checkout__title">Your shopping Basket</h2>
 
-          {basket.map(item => (
+          {basket.map((item) => (
             <CheckOutProduct
               id={item.id}
               title={item.title}
@@ -27,14 +30,13 @@ function Checkout() {
               rating={item.rating}
             />
           ))}
-
         </div>
       </div>
-            <div className="checkout__right">
-          <SubTotal />
-        </div>
+      <div className="checkout__right">
+        <SubTotal />
+      </div>
     </div>
-  )
+  );
 }
 
-export default Checkout
+export default Checkout;
