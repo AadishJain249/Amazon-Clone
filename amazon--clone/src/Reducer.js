@@ -1,15 +1,17 @@
+import formatCurrency from "./utils/formatCurrency"
+
 export const initialState={
     basket:[{
         id:"4903850",
         title:"Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor",
-        price:16000,
+        price:formatCurrency(16000),
         rating:3,
         image:"https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg"
     },
     {
         id:"4903850",
         title:"Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor",
-        price:16000,
+        price:formatCurrency(16000),
         rating:3,
         image:"https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg"
     },
@@ -18,7 +20,7 @@ export const initialState={
 user:null
 }
 export const getAmount=(basket)=>
-    basket?.reduce((amount,item)=>item.price+amount,0)
+    formatCurrency(basket?.reduce((amount,item)=>Number(item.price.replace(",", ""))+amount,0))
 
 function reduce(state,action)
 {
