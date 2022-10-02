@@ -1,16 +1,19 @@
-import React from 'react'
-import './SubTotal.css'
-import CurrencyFormat from 'react-currency-format'
-import { useStateValue } from '../StateProvider/StateProvider'
-import { getAmount } from '../Reducer'
+import React from "react";
+import "./SubTotal.css";
+import CurrencyFormat from "react-currency-format";
+import { useStateValue } from "../StateProvider/StateProvider";
+import { getAmount } from "../Reducer";
 function SubTotal() {
-    const [{basket}]=useStateValue()
-    console.log(basket);
+  const theme = window.localStorage.getItem("theme-azclone")
+    ? window.localStorage.getItem("theme-azclone")
+    : "light";
+  const [{ basket }] = useStateValue();
+  console.log(basket);
   return (
-   <div className='subtotal'>
-        <CurrencyFormat
-        renderText={(value)=>(
-            <>
+    <div className={theme === "light" ? "subtotal" : "subtotal__dark subtotal"}>
+      <CurrencyFormat
+        renderText={(value) => (
+          <>
             <p>
               {/* Part of the homework */}
               Subtotal ({basket.length} items): <strong>{value}</strong>
@@ -25,9 +28,9 @@ function SubTotal() {
         displayType={"text"}
         thousandSeparator={true}
         prefix={"₹"}
-        />
-        <button>Proceed to checkout</button>
+      />
+      <button>Proceed to checkout</button>
     </div>
-  )
+  );
 }
-export default SubTotal
+export default SubTotal;
