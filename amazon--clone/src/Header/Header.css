@@ -29,7 +29,7 @@
   width: 100%;
 }
 
-.fa-search{
+.fa-search {
   padding: 5px;
   height: 22px !important;
   background-color: #cd9042;
@@ -59,14 +59,13 @@
   display: flex;
   justify-content: space-evenly;
 }
-.sel{
+.sel {
   width: 90px;
   height: 18px;
   border-color: black;
-  border:  solid 2px;
+  border: solid 2px;
   padding-left: 10px;
   padding-bottom: 10px;
-
 }
 .header__option {
   display: flex;
@@ -74,4 +73,7 @@
   margin-left: 10px;
   margin-right: 10px;
   color: white;
+}
+.header__theme {
+  margin-left: 10px;
 }

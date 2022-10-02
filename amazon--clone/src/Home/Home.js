@@ -5,11 +5,18 @@ import Product from '../Product/Product'
 import formatCurrency from '../utils/formatCurrency'
 
 function Home() {
-    return(
-        <div className="home">
-            <div className="home__container">
-                <img className="home__image" src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg" alt=""/>
-            <div className="home__row">
+  const theme = window.localStorage.getItem("theme-azclone")
+    ? window.localStorage.getItem("theme-azclone")
+    : "light";
+  return (
+    <div className={theme === "light" ? "home" : "home__dark home"}>
+      <div className="home__container">
+        <img
+          className="home__image"
+          src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
+          alt=""
+        />
+        <div className="home__row">
           <Product
             id="12321341"
             title="The Lean Startup: How Constant Innovation Creates Radically Successful Businesses Paperback"
@@ -61,8 +68,6 @@ function Home() {
         </div>
       </div>
     </div>
-        
-    )
-    
+  );
 }
-export default Home
+export default Home;
