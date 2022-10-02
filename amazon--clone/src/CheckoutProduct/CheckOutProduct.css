@@ -2,6 +2,7 @@
     display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
+    justify-content: start;
 }
 
 .checkoutProduct__info {
@@ -9,7 +10,15 @@
     width: 500px;
 }
 
-.checkoutProduct__info > button {
+.checkoutProduct__price{
+    margin: 0;
+    text-align: start;
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.checkoutProduct__info > div > button {
     background: #f0c14b;
     border: 1px solid;
     margin-top: 10px;
@@ -25,9 +34,21 @@
 
 .checkoutProduct__rating {
     display: flex;
+    margin-top: 10px;
   }
 
 .checkoutProduct__title {
+    margin: 0;
+    text-align: start;
     font-size: 17px;
     font-weight: 800;
+}
+
+.star{
+    margin: 0;
+}
+
+.btn_div{
+    margin-top: 10px;
+    text-align: start !important;
 }

@@ -15,17 +15,19 @@ function CheckOutProduct(props) {
         <div className='checkoutProduct__info'>
                 <p className='checkoutProduct__title'>{props.title}</p>
                 <p className="checkoutProduct__price">
-                    <small>₹</small>
-                    <strong>{props.price}</strong>
+                    <div>₹ {props.price}</div>
                 </p>
                 <div className="checkoutProduct__rating">
                     {Array(props.rating)
                     .fill()
                     .map((_, i) => (
-                        <p>🌟</p>
+                        <p className='star'>🌟</p>
                     ))}
                 </div>
+                <div className='btn_div'>
                 <button onClick={removeFromBasket}>Remove From Basket</button>
+                </div>
+               
 
         </div>
     </div>
