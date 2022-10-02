@@ -14,6 +14,37 @@ The design is based on Amazon.
 - Do npm i for this project after installing all dependencies and do npm start 
 - .env is needed to run the application locally (.env in this project is for firebase)
 
+## Download and Instalation
+
+You can clone the project using the following command in your terminal:
+
+```
+git clone https://github.com/AadishJain249/Amazon-Clone.git
+```
+
+Now, cd amazon-clone/ and before to start, you need to install the dependencies:
+
+```
+npm install or npm i
+```
+
+or
+
+```
+yarn install
+```
+
+## Available Scripts
+
+In the project directory, you can run:
+
+```
+npm start
+```
+
+Runs the app in the development mode.
+
+Open http://localhost:3000 to view it in the browser.
 
 # How to contribute
 - If you want to contribute please check the open issues https://github.com/AadishJain249/Amazon-Clone/issues
