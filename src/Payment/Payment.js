@@ -1,33 +1,37 @@
+
 /* eslint-disable array-callback-return */
 import axios from 'axios'
-import React,{useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './Payment.css';
 import { useStateValue } from "../StateProvider/StateProvider";
 import CheckOutProduct from '../CheckoutProduct/CheckOutProduct';
 import { Link } from 'react-router-dom';
-import {CardElement,useElements,useStripe} from '@stripe/react-stripe-js'
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js'
 import { getAmount } from '../Reducer';
 import { db } from "../firebase";
 
 function Payment() {
-    const history=useHistory()
-    const[{basket,user},dispatch]=useStateValue()
-    const stripe=useStripe()
+    const history = useHistory()
+    const [{ basket, user }, dispatch] = useStateValue()
+    const stripe = useStripe()
     const [succeeded, setSucceeded] = useState(false);
     const [processing, setProcessing] = useState("");
-    const [clientSecret,setclientsecret]=useState("")
-    const elements=useElements()   
-    const [error,seterror]=useState(null)
-    const [disable,setdisable]=useState(true)
+    const [clientSecret, setclientsecret] = useState("")
+    const elements = useElements()
+    const [error, seterror] = useState(null)
+    const [disable, setdisable] = useState(true)
     //
     useEffect(() => {
         // generate the special stripe secret which allows us to charge a customer
+        const amount = Number(getAmount(basket).replace(",", ""))
+        console.log(amount);
         const getClientSecret = async () => {
+                        
             const response = await axios({
                 method: 'post',
                 // Stripe expects the total in a currencies subunits
-                url: `/payments/create?total=${getAmount(basket) * 100}`
+                url: `/payments/create?total=${amount}`
             });
             setclientsecret(response.data.clientSecret)
         }
@@ -36,7 +40,7 @@ function Payment() {
     }, [basket])
 
     console.log(clientSecret)
-    const handlesubmit=async(event)=>{
+    const handlesubmit = async (event) => {
         event.preventDefault()
         setProcessing(true)
         const result = await stripe.confirmCardPayment(clientSecret, {
@@ -50,15 +54,15 @@ function Payment() {
             // paymentIntent = payment confirmation
 
             db
-              .collection('users')
-              .doc(user?.uid)
-              .collection('orders')
-              .doc(paymentIntent.id)
-              .set({
-                  basket: basket,
-                  amount: paymentIntent.amount,
-                  created: paymentIntent.created
-              })
+                .collection('users')
+                .doc(user?.uid)
+                .collection('orders')
+                .doc(paymentIntent.id)
+                .set({
+                    basket: basket,
+                    amount: paymentIntent.amount,
+                    created: paymentIntent.created
+                })
 
             setSucceeded(true);
             seterror(null)
@@ -75,16 +79,16 @@ function Payment() {
 
 
     const handlechange
-    =(event)=>{
-        setdisable(event.empty)
-        seterror(event.error?event.error.message:"")
-    }
+        = (event) => {
+            setdisable(event.empty)
+            seterror(event.error ? event.error.message : "")
+        }
     return (
         <div className='payment'>
             <div className='payment__container'>
                 <h1>
                     Checkout(<Link to="/checkout">{basket.length}items</Link>)
-                 </h1>
+                </h1>
 
 
                 {/* Payment section - delivery address */}
@@ -105,18 +109,18 @@ function Payment() {
                         <h3>Review items and delivery</h3>
                     </div>
                     <div className='payment__items'>
-                    {basket.map((item) => (
-                    <CheckOutProduct
-                    id={item.id}
-                    title={item.title}
-                    image={item.image}
-                    price={item.price}
-                    rating={item.rating}
-                    />
-                    ))}
-                     </div>
+                        {basket.map((item) => (
+                            <CheckOutProduct
+                                id={item.id}
+                                title={item.title}
+                                image={item.image}
+                                price={item.price}
+                                rating={item.rating}
+                            />
+                        ))}
+                    </div>
                 </div>
-            
+
 
                 {/* Payment section - Payment method */}
                 <div className='payment__section'>
@@ -125,17 +129,17 @@ function Payment() {
                     </div>
                     <div className="payment__details">
                         <form onSubmit={handlesubmit}>
-                        <CardElement onChange={handlechange}></CardElement>
-                        <div className='payment__priceContainer'>
-                        <p>Order Value ({basket.length} items):{" "}
-                           <strong>{`₹ ${getAmount(basket)}`}</strong>
-                        </p>
-                        {/* button is disabled after one performing one of these actions */}
-                        <button disabled={processing || disable || succeeded}>
-                            <span >{processing?<p>Processing</p>:"Buy Now"}</span>
-                        </button>
-                        </div>
-                        {error && <div>{error}</div>}
+                            <CardElement onChange={handlechange}></CardElement>
+                            <div className='payment__priceContainer'>
+                                <p>Order Value ({basket.length} items):{" "}
+                                    <strong>{`₹ ${getAmount(basket)}`}</strong>
+                                </p>
+                                {/* button is disabled after one performing one of these actions */}
+                                <button disabled={processing || disable || succeeded}>
+                                    <span >{processing ? <p>Processing</p> : "Buy Now"}</span>
+                                </button>
+                            </div>
+                            {error && <div>{error}</div>}
                         </form>
                     </div>
                 </div>
