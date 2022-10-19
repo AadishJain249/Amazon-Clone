@@ -5,7 +5,7 @@ function Product(props) {
   const theme = window.localStorage.getItem("theme-azclone")
     ? window.localStorage.getItem("theme-azclone")
     : "light";
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket },dispatch] = useStateValue();
   const addToBasket = () => {
     dispatch({
       type: "ADD_TO_BASKET",
@@ -41,5 +41,4 @@ function Product(props) {
     </div>
   );
 }
-
 export default Product;

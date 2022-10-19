@@ -1,4 +1,3 @@
-
 /* eslint-disable array-callback-return */
 import axios from 'axios'
 import React, { useEffect, useState } from 'react';
@@ -24,10 +23,8 @@ function Payment() {
     //
     useEffect(() => {
         // generate the special stripe secret which allows us to charge a customer
-        const amount = Number(getAmount(basket).replace(",", ""))
-        console.log(amount);
+        const amount = Number(getAmount(basket).replace(",", "")) * 100
         const getClientSecret = async () => {
-                        
             const response = await axios({
                 method: 'post',
                 // Stripe expects the total in a currencies subunits

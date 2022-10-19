@@ -19,11 +19,19 @@
 }
 
 .checkoutProduct__info > div > button {
-    background: #f0c14b;
-    border: 1px solid;
-    margin-top: 10px;
-    border-color: #a88734 #9c7e31 #846a29;
-    color: #111;
+    
+  background: #f0c14b;
+  border: 1px solid;
+  border-radius: 15px;
+  margin-top: 10px;
+  width: 150px;
+  height: 25px;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
 }
 
 .checkoutProduct__image {

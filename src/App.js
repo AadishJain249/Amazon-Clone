@@ -7,6 +7,7 @@ import Home from './Home/Home';
 import Checkout from './Checkout/Checkout';
 import Login from './Login/Login';
 import { auth } from './firebase';
+import Footer from './Footer/Footer';
 import { useStateValue } from './StateProvider/StateProvider';
 import {Elements} from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js';
@@ -63,6 +64,7 @@ function App() {
     <Route path="/">
         <Header/>
         <Home></Home>
+        <Footer></Footer>
     </Route>
         
     </Switch>
