@@ -34,9 +34,7 @@ function Product(props) {
             ))}
         </div>
       </div>
-
       <img src={props.image} alt="" />
-
       <button onClick={addToBasket}>Add to Basket</button>
     </div>
   );

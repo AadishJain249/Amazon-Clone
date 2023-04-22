@@ -27,8 +27,6 @@ function CheckOutProduct(props) {
                 <div className='btn_div'>
                 <button onClick={removeFromBasket}>Remove From Basket</button>
                 </div>
-               
-
         </div>
     </div>
   )

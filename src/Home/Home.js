@@ -1,9 +1,7 @@
 import React from 'react'
 import './Home.css'
 import Product from '../Product/Product'
-
 import formatCurrency from '../utils/formatCurrency'
-
 function Home() {
   const theme = window.localStorage.getItem("theme-azclone")
     ? window.localStorage.getItem("theme-azclone")

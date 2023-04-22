@@ -11,11 +11,6 @@ function Checkout() {
   return (
     <div className={theme === "light" ? "checkout" : "checkout__dark checkout"}>
       <div className="checkout__left">
-        <img
-          className="checkout__ad"
-          src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg"
-          alt=""
-        />
 
         <div className={theme === "light" ? "" : "checkout__body__dark"}>
           <h3>{user?.email}</h3>

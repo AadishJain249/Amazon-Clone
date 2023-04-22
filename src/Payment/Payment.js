@@ -49,7 +49,6 @@ function Payment() {
             }
         }).then(({ paymentIntent }) => {
             // paymentIntent = payment confirmation
-
             db
                 .collection('users')
                 .doc(user?.uid)
