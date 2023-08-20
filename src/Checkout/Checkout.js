@@ -11,14 +11,14 @@ function Checkout() {
   return (
     <div className={theme === "light" ? "checkout" : "checkout__dark checkout"}>
       <div className="checkout__left">
-
         <div className={theme === "light" ? "" : "checkout__body__dark"}>
           <h3>{user?.email}</h3>
           <h2 className="checkout__title">Your shopping Basket</h2>
 
-          {basket.map((item) => (
+          {basket.map((item, index) => (
             <CheckOutProduct
               id={item.id}
+              key={index}
               title={item.title}
               image={item.image}
               price={item.price}

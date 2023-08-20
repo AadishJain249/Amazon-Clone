@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Login.css";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../src/firebase";
 import React from "react";
 //firebase uses cokkies thats why it knows whether we logged in or logged out
@@ -8,9 +8,9 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [setUser, setUserName] = useState("");
-  const history = useHistory();
+  const history = useNavigate();
   // const theme = window.localStorage.getItem("theme-azclone")
-    // ? window.localStorage.getItem("theme-azclone")
+  // ? window.localStorage.getItem("theme-azclone")
   //   : "light";
   const signIn = (e) => {
     e.preventDefault();
@@ -18,7 +18,7 @@ function Login() {
       .signInWithEmailAndPassword(email, password)
       .then((auth) => {
         // it successfully created a new user with email and password
-        history.push("/");
+        history("/");
       })
       .catch((error) => alert(error.message));
   };
@@ -32,7 +32,7 @@ function Login() {
         if (auth) {
           // is true
 
-          history.push("/");
+          history("/"); 
         }
       })
       .catch((error) => alert(error.message));

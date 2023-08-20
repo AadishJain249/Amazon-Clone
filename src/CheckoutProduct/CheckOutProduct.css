@@ -7,7 +7,7 @@
 
 .checkoutProduct__info {
     padding-left: 20px;
-    width: 500px;
+    width: 150px;
 }
 
 .checkoutProduct__price{
@@ -36,8 +36,8 @@
 
 .checkoutProduct__image {
     object-fit: contain;
-    width: 700px;
-    height: 7000px;
+    width: 400px;
+    height: 200px;
   }
 
 .checkoutProduct__rating {
