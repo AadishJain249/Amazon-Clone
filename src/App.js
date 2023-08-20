@@ -13,9 +13,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 function App() {
   const [{},dispatch]=useStateValue()
-  const promise = loadStripe(
-    "pk_test_51LqrtKSDl8Bf4BRHpuJij2XtZBem6jNs8AyELJLRe0X40k3fL5cB8YjyBtKC91VsVglQ23Sk7xwSk6FqRFr95lqv00j82OozCH"
-  );
+  const promise = loadStripe(process.env.stripe_key)
   useEffect(() => {
     // will only run once when the app component loads...
 

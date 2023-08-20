@@ -1,12 +1,9 @@
-// http://localhost:5001/clone-6cf0d/us-central1/api
 const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
-const stripe=require('stripe')("sk_test_51LqrtKSDl8Bf4BRHVcVxkIVLr28ymqKKjeOMiBTMAxQIO3CglulNfum3x6o8BwpeUbC8bvUGGZduTaxsDN1zIlR200CqpnOYKP");
+const stripe=require('stripe')();
 const app = express();
 // - Middlewares
-console.log("hello");
-console.log(stripe);
 app.use(cors());
 app.use(express.json());
 app.post("/payments/create",async(req,res)=>{
