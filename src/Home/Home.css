@@ -5,7 +5,7 @@
     justify-content: space-evenly;
 }
 .home__dark {
-  background-color: #484040e3;
+  background-color: black;
 }
 .home__row {
   display: flex;

@@ -4,7 +4,12 @@
   text-decoration: none;
 }
 .card:hover {
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 2px 2px px 1px rgba(0, 0, 0, 0.2); */
+}
+
+.product__dark {
+  background-color: #252525;
+  color: white !important;
 }
 .card-body
 {

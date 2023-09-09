@@ -4,7 +4,6 @@ import "./CountrySelector.css";
 export default function CountrySelector() {
   const [select, setSelect] = useState("IN");
   const onSelect = (code) => setSelect(code);
-  console.log("SELECT", select);
   return (
     <div className="App">
       <ReactFlagsSelect

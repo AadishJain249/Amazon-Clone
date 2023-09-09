@@ -2,12 +2,11 @@
     font-family: sans-serif;
     text-align: center;
     position: relative;
-    top: 10px;
   }
   
 .react-tel-input {
     font-family: "Roboto", sans-serif;
-    font-size: 15px;
+    font-size: 30px;
     position: relative;
     width: 100%;
     
@@ -16,7 +15,7 @@
     cursor: not-allowed;
   }
   .flag {
-    width: 30px;
+    width: 25px;
     height: 25px;
     background-image: url("https://raw.githubusercontent.com/bl00mber/react-phone-input-2/master/src/style/common/high-res.png");
     background-repeat: no-repeat;

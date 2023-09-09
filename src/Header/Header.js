@@ -6,6 +6,7 @@ import "./Switch.css";
 import { auth } from "../firebase";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../StateProvider/StateProvider";
+import CountrySelector from "./CountrySelector";
 const Header = () => {
   const [{ basket, user }] = useStateValue();
   // console.log(useStateValue());
@@ -38,20 +39,10 @@ const Header = () => {
 
       <div className="header__search">
         <input className="header__searchInput" type="text" />
-        {/* <SearchIcon className="header__searchIcon" /> */}
         <i className="fa fa-search" aria-hidden="true"></i>
       </div>
 
       <div className="header__theme">
-        {/* {theme === "light" ? (
-          <button className="to-dark-theme" onClick={toDark}>
-            Dark
-          </button>
-        ) : (
-          <button className="to-light-theme" onClick={toLight}>
-            Light
-          </button>
-        )} */}
         {theme === "dark" ? (
           <label className="switch">
             <input type="checkbox" onClick={toLight} checked />
@@ -75,10 +66,13 @@ const Header = () => {
             </span>
           </div>
         </Link>
-
+          
+          <CountrySelector></CountrySelector>
         <div className="header__option">
           <span className="header__optionLineOne">Your</span>
           <span className="header__optionLineTwo">Prime</span>
+        </div>
+        <div className="header__option">
         </div>
 
         <div className="header__option">
