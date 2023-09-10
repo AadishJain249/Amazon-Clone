@@ -34,11 +34,11 @@ function reduce(state, action) {
       const index = state.basket.findIndex(
         (basketItem) => basketItem.id === action.id
       );
-      console.log(index);
+      // console.log(index);
       let newBasket = [...state.basket];
       if (index >= 0) newBasket.splice(index, 1);
       else {
-        console.warn(` (id :${action.id}) is not in basket)`);
+        // console.warn(` (id :${action.id}) is not in basket)`);
       }
       return { ...state, basket: newBasket };
     case "SET_USER":

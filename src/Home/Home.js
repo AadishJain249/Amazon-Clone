@@ -12,9 +12,9 @@ function Home() {
     getData();
   }, []);
   async function getData() {
-    const res = await fetch("https://dummyjson.com/products");
-    const data = await res.json();
-    SetProduct(data.products);
+    // const res = await fetch("https://dummyjson.com/products");
+    // const data = await res.json();
+    // SetProduct(data.products);
   }
   getData();
 

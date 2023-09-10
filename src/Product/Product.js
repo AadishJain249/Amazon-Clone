@@ -49,7 +49,7 @@ function Product(props) {
 
     // </div>
 
-    <div className={theme === "light" ? "card" : "product__dark product"}>
+    <div className={theme === "light" ? "card" : "product__dark card"}>
     <div className="card">
     <img className="card-img" src={props.images[0]} alt="Not Rendring" />
     <div className="card-body">
