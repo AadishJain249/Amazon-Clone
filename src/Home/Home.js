@@ -22,6 +22,7 @@ function Home() {
     <div className={theme === "light" ? "home" : "home__dark home"}>
       <div className="home__container">
        <Slider></Slider>
+       <p className="tit">Products</p>
         <div className="home__row">
           {ProductData.products &&
             ProductData.products.map((e, index) => {

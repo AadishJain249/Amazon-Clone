@@ -45,25 +45,21 @@ function Product(props) {
     //     <button onClick={addToBasket}>Add to Basket</button>
     //     <img className="card-img " src={props.images[0]} alt="" />
     //   </div>
-      
-
     // </div>
 
     <div className={theme === "light" ? "card" : "product__dark card"}>
-    <div className="card">
     <img className="card-img" src={props.images[0]} alt="Not Rendring" />
     <div className="card-body">
       <h6 className="card-title">{props.title}</h6>
+      <button onClick={addToBasket}>Add to Basket</button>
       <div className="card-details">
         <div className="rating">
           <span>{props.rating}⭐</span>
         </div>
         <div className="price"><b>₹{props.price}</b></div>
-        <button onClick={addToBasket}>Add to Basket</button>
+        </div>
       </div>
     </div>
-  </div>
-  </div>
   );
 }
 export default Product;
