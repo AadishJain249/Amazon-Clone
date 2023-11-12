@@ -7,6 +7,12 @@
 .home__dark {
   background-color: black;
 }
+.home__container
+{
+  margin:auto;
+  left:50%;
+}
+
 .home__row {
   display: flex;
   flex-wrap: wrap;
